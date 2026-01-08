@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AbuBakar Hussain - Senior Flutter & .NET Full-Stack Developer Resume</title>
+  <title>AbuBakar Hussain - Resume</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <style>
@@ -83,22 +83,128 @@
     }
     
     @media print {
-      .download-header {
-        display: none;
+      @page {
+        margin: 0.3in 0.3in 0.5in 0.3in;
+        size: letter;
+        /* Elegant footer with page number */
+        @bottom-center {
+          content: "Page " counter(page) " of " counter(pages);
+          font-size: 9pt;
+          color: #666;
+          font-family: 'Arial', sans-serif;
+          padding-top: 5px;
+        }
+        /* Remove browser headers */
+        @top-center {
+          content: "";
+        }
+        @top-left {
+          content: "";
+        }
+        @top-right {
+          content: "";
+        }
       }
+      
+      /* Hide download header completely */
+      .download-header {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+      }
+      
       body {
         background: #fff;
+        margin: 0;
+        padding: 0;
+        font-size: 10pt;
+        counter-reset: page;
       }
+      
       .resume-container {
-        padding: 0.3in;
+        padding: 0;
         max-width: 100%;
+        margin: 0;
       }
+      
+      .header {
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+      }
+      
+      .header h1 {
+        font-size: 24pt;
+        margin-bottom: 3px;
+      }
+      
+      .header .title {
+        font-size: 12pt;
+        margin-bottom: 6px;
+      }
+      
+      .contact-info {
+        font-size: 9pt;
+        gap: 10px;
+      }
+      
       .section {
         page-break-inside: avoid;
+        margin-bottom: 12px;
       }
+      
+      .section-title {
+        font-size: 12pt;
+        margin-bottom: 8px;
+        padding-bottom: 3px;
+      }
+      
       .experience-item, .education-item, .project-item {
         page-break-inside: avoid;
+        margin-bottom: 10px;
       }
+      
+      .job-header {
+        margin-bottom: 3px;
+      }
+      
+      .job-title {
+        font-size: 11pt;
+      }
+      
+      .job-company {
+        font-size: 10pt;
+      }
+      
+      .job-date {
+        font-size: 9pt;
+      }
+      
+      ul {
+        margin-left: 18px;
+        margin-bottom: 8px;
+      }
+      
+      li {
+        margin-bottom: 3px;
+        font-size: 10pt;
+        line-height: 1.4;
+      }
+      
+      p {
+        margin-bottom: 6px;
+        font-size: 10pt;
+        line-height: 1.5;
+      }
+      
+      .summary {
+        font-size: 10pt;
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+      
       a {
         color: #149ddd !important;
         text-decoration: underline;
@@ -108,14 +214,14 @@
     .resume-container {
       max-width: 8.5in;
       margin: 0 auto;
-      padding: 0.5in;
+      padding: 0.4in;
       background: white;
     }
     
     .header {
       border-bottom: 3px solid #149ddd;
-      padding-bottom: 15px;
-      margin-bottom: 20px;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
     }
     
     .header h1 {
@@ -150,7 +256,7 @@
     }
     
     .section {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
     
     .section-title {
@@ -171,7 +277,7 @@
     }
     
     .experience-item, .education-item, .project-item {
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
     
     .job-header {
@@ -281,7 +387,7 @@
     <h1>AbuBakar Hussain - Resume</h1>
     <p style="margin: 10px 0; font-size: 14pt;">Senior Flutter & .NET Full-Stack Developer</p>
     <div class="download-buttons">
-      <a href="#" onclick="window.print(); return false;" class="download-btn">
+      <a href="#" onclick="printResume(); return false;" class="download-btn">
         <i class="bx bx-download"></i> Download as PDF
       </a>
       <a href="index.html" class="download-btn" style="background-color: rgba(255,255,255,0.2); color: white; border-color: white;">
@@ -593,6 +699,32 @@
     </div>
 
   </div>
+
+  <script>
+    function printResume() {
+      // Hide the download header before printing
+      const header = document.querySelector('.download-header');
+      if (header) {
+        header.style.display = 'none';
+      }
+      
+      // Open print dialog
+      window.print();
+      
+      // Show header again after printing (in case user cancels)
+      setTimeout(() => {
+        if (header) {
+          header.style.display = '';
+        }
+      }, 1000);
+    }
+    
+    // Add print event listener to handle browser print headers
+    window.addEventListener('beforeprint', function() {
+      // Remove any browser-added headers
+      document.title = 'AbuBakar Hussain - Resume';
+    });
+  </script>
 </body>
 </html>
 
