@@ -193,7 +193,9 @@
    * Initiate portfolio lightbox 
    */
   const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
+    selector: '.portfolio-lightbox',
+    zoomable: true,
+    draggable: true
   });
 
   /**
@@ -202,6 +204,8 @@
   new Swiper('.portfolio-details-slider', {
     speed: 400,
     loop: true,
+    slidesPerView: 1,
+    spaceBetween: 10,
     autoplay: {
       delay: 5000,
       disableOnInteraction: false
@@ -210,6 +214,20 @@
       el: '.swiper-pagination',
       type: 'bullets',
       clickable: true
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 10
+      },
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 10
+      },
+      1024: {
+        slidesPerView: 1,
+        spaceBetween: 10
+      }
     }
   });
 

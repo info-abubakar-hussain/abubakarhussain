@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AbuBakar Hussain - Senior Flutter & .NET Full-Stack Developer Resume</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+      font-size: 11pt;
+    }
+    
+    .download-header {
+      background: linear-gradient(135deg, #149ddd 0%, #0d6efd 100%);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    
+    .download-header h1 {
+      color: white;
+      margin-bottom: 10px;
+      font-size: 24pt;
+    }
+    
+    .download-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+    
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 25px;
+      background-color: white;
+      color: #149ddd;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: 2px solid white;
+      font-size: 14pt;
+    }
+    
+    .download-btn:hover {
+      background-color: #f8f9fa;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .download-btn i {
+      font-size: 18pt;
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: white;
+      text-decoration: none;
+      opacity: 0.9;
+    }
+    
+    .back-link:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    
+    @media print {
+      .download-header {
+        display: none;
+      }
+      body {
+        background: #fff;
+      }
+      .resume-container {
+        padding: 0.3in;
+        max-width: 100%;
+      }
+      .section {
+        page-break-inside: avoid;
+      }
+      .experience-item, .education-item, .project-item {
+        page-break-inside: avoid;
+      }
+      a {
+        color: #149ddd !important;
+        text-decoration: underline;
+      }
+    }
+    
+    .resume-container {
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 0.5in;
+      background: white;
+    }
+    
+    .header {
+      border-bottom: 3px solid #149ddd;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .header h1 {
+      font-size: 28pt;
+      color: #050d18;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    .header .title {
+      font-size: 14pt;
+      color: #666;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 10pt;
+      color: #555;
+    }
+    
+    .contact-info a {
+      color: #149ddd;
+      text-decoration: none;
+    }
+    
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    
+    .section {
+      margin-bottom: 20px;
+    }
+    
+    .section-title {
+      font-size: 14pt;
+      font-weight: bold;
+      color: #050d18;
+      border-bottom: 2px solid #149ddd;
+      padding-bottom: 5px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    
+    .summary {
+      text-align: justify;
+      margin-bottom: 15px;
+      font-size: 11pt;
+      line-height: 1.7;
+    }
+    
+    .experience-item, .education-item, .project-item {
+      margin-bottom: 15px;
+    }
+    
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 5px;
+    }
+    
+    .job-title {
+      font-size: 12pt;
+      font-weight: bold;
+      color: #050d18;
+    }
+    
+    .company {
+      font-size: 11pt;
+      color: #149ddd;
+      font-style: italic;
+      margin-left: 5px;
+    }
+    
+    .dates {
+      font-size: 10pt;
+      color: #666;
+      font-weight: normal;
+    }
+    
+    .job-description ul {
+      margin-left: 20px;
+      margin-top: 5px;
+    }
+    
+    .job-description li {
+      margin-bottom: 4px;
+      text-align: justify;
+      font-size: 10pt;
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+    
+    .skill-category {
+      margin-bottom: 10px;
+    }
+    
+    .skill-category strong {
+      color: #149ddd;
+      font-size: 10pt;
+    }
+    
+    .skill-category span {
+      font-size: 10pt;
+      color: #555;
+    }
+    
+    .project-item {
+      margin-bottom: 12px;
+    }
+    
+    .project-title {
+      font-weight: bold;
+      color: #050d18;
+      font-size: 11pt;
+    }
+    
+    .project-links {
+      margin-top: 3px;
+      font-size: 9pt;
+    }
+    
+    .project-links a {
+      color: #149ddd;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+    
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+    
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    
+    @media print {
+      .resume-container {
+        padding: 0.25in;
+      }
+      .section {
+        page-break-inside: avoid;
+      }
+      a {
+        color: #149ddd !important;
+      }
+    }
+  </style>
+  </head>
+<body>
+  <div class="download-header">
+    <h1>AbuBakar Hussain - Resume</h1>
+    <p style="margin: 10px 0; font-size: 14pt;">Senior Flutter & .NET Full-Stack Developer</p>
+    <div class="download-buttons">
+      <a href="#" onclick="window.print(); return false;" class="download-btn">
+        <i class="bx bx-download"></i> Download as PDF
+      </a>
+      <a href="index.html" class="download-btn" style="background-color: rgba(255,255,255,0.2); color: white; border-color: white;">
+        <i class="bx bx-home"></i> Back to Portfolio
+      </a>
+    </div>
+    <a href="index.html" class="back-link">← Return to Portfolio</a>
+  </div>
+  <div class="resume-container">
+    
+    <!-- Header Section -->
+    <div class="header">
+      <h1>ABUBAKAR HUSSAIN</h1>
+      <div class="title">Senior Flutter & .NET Full-Stack Developer | AI-Powered Development Specialist</div>
+      <div class="contact-info">
+        <span>📧 <a href="mailto:abubakar-hussain@hotmail.com">abubakar-hussain@hotmail.com</a></span>
+        <span>📱 +92-300-1115589</span>
+        <span>🔗 <a href="https://www.linkedin.com/in/abubakar-hussain-66b834130/" target="_blank">LinkedIn Profile</a></span>
+        <span>🌐 <a href="https://info-abubakar-hussain.github.io/abubakarhussain/" target="_blank">Portfolio</a></span>
+        <span>📍 Paragon City, Lahore, Punjab, Pakistan</span>
+      </div>
+    </div>
+
+    <!-- Professional Summary -->
+    <div class="section">
+      <div class="section-title">Professional Summary</div>
+      <div class="summary">
+        Results-driven Senior Mobile & Full-Stack Developer with 10+ years of software development experience. Expert in Flutter (5+ years), Android Native (4+ years), and .NET Backend Development. Specialized in building enterprise-grade applications with AI/ML integration, facial recognition (InsightFace), OCR document verification (Qwen2-7B), BioPass fingerprint biometric authentication, blockchain technology, and real-time communication systems (XMPP/Ejabberd, WebSocket/SignalR). AI-augmented development leader using Cursor AI, GitHub Copilot, and vibe coding techniques to accelerate delivery by 40% while maintaining 95% code quality. Proven track record in leading development teams, delivering high-quality cross-platform applications, and implementing cutting-edge solutions for mobile, web, and backend systems.
+      </div>
+    </div>
+
+    <!-- Core Competencies -->
+    <div class="section">
+      <div class="section-title">Core Competencies</div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <strong>Mobile Development:</strong><br>
+          <span>Flutter (Dart), Android (Java/Kotlin), iOS, Cross-Platform</span>
+        </div>
+        <div class="skill-category">
+          <strong>Backend Development:</strong><br>
+          <span>ASP.NET MVC, .NET Core, C#, REST APIs, GraphQL, Node.js</span>
+        </div>
+        <div class="skill-category">
+          <strong>AI/ML & Computer Vision:</strong><br>
+          <span>InsightFace, OCR (Qwen2-7B), TensorFlow Lite, Facial Recognition</span>
+        </div>
+        <div class="skill-category">
+          <strong>Biometric Authentication:</strong><br>
+          <span>BioPass Fingerprint SDK, Voice Recognition, Multi-Factor Auth</span>
+        </div>
+        <div class="skill-category">
+          <strong>AI-Powered Development:</strong><br>
+          <span>Cursor AI, GitHub Copilot, Vibe Coding, Prompt Engineering</span>
+        </div>
+        <div class="skill-category">
+          <strong>Architecture & Patterns:</strong><br>
+          <span>MVVM, Clean Architecture, Microservices, BLoC, Provider, GetX</span>
+        </div>
+        <div class="skill-category">
+          <strong>Real-Time Systems:</strong><br>
+          <span>XMPP (Ejabberd, xmpp_plugin), WebSocket, SignalR, Push Notifications</span>
+        </div>
+        <div class="skill-category">
+          <strong>Blockchain & Crypto:</strong><br>
+          <span>Node-based Blockchain, Cryptocurrency Wallet Integration</span>
+        </div>
+        <div class="skill-category">
+          <strong>Databases:</strong><br>
+          <span>SQL Server, PostgreSQL, MySQL, SQLite, Firebase, MongoDB</span>
+        </div>
+        <div class="skill-category">
+          <strong>Admin Systems:</strong><br>
+          <span>Admin Panels, User Management, Analytics Dashboards, RBAC</span>
+        </div>
+        <div class="skill-category">
+          <strong>State Management:</strong><br>
+          <span>BLoC, Provider, GetX, Riverpod</span>
+        </div>
+        <div class="skill-category">
+          <strong>DevOps & Tools:</strong><br>
+          <span>CI/CD Pipelines, Git, Docker, Automated Testing, Performance Optimization</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Professional Experience -->
+    <div class="section">
+      <div class="section-title">Professional Experience</div>
+      
+      <div class="experience-item">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Flutter Consultant</span>
+            <span class="company">Swati Technologies | Lahore, Pakistan</span>
+          </div>
+          <span class="dates">October 2023 - Present</span>
+        </div>
+        <div class="job-description">
+          <ul>
+            <li>Leading development of cutting-edge mobile applications with AI, blockchain, and secure communication technologies, managing complete SDLC with 100% on-time delivery rate</li>
+            <li>Pioneering AI-augmented development workflows using Cursor AI, GitHub Copilot, and vibe coding techniques, improving team productivity by 45%</li>
+            <li>Architected and developed D-iDconnect Ecosystem: Revolutionary AI-powered security application serving thousands of users with complete administrative control system</li>
+            <li>Integrated BioPass Fingerprint SDK (Flutter frontend kit) with .NET Core backend biometric verification models for secure multi-factor authentication</li>
+            <li>Implemented facial recognition using InsightFace models (SCRFD-10GF detection, ResNet50 recognition) with liveness detection and anti-spoofing mechanisms</li>
+            <li>Developed OCR document verification system using Qwen2-7B-Instruct model for automated identity document scanning, data extraction, and fraud detection</li>
+            <li>Built complete admin panel system with comprehensive dashboard, user management, analytics, RBAC, audit logs, and real-time monitoring using SignalR</li>
+            <li>Architected microservices backend with .NET Core and Node.js handling 100K+ daily transactions with optimized performance and scalability</li>
+            <li>Implemented secure real-time XMPP chat system using Ejabberd server with xmpp_plugin 2.2.13, featuring end-to-end encryption, presence management, and offline message queuing</li>
+            <li>Integrated node-based blockchain for secure transaction verification and cryptocurrency wallet management with mnemonic phrase generation</li>
+            <li>Utilized AI-powered development tools reducing development time by 40% while maintaining 95% code quality through automated testing achieving 90% coverage</li>
+            <li>Led 8+ developer team delivering enterprise mobile and backend solutions with modern AI-powered workflows</li>
+          </ul>
+          <p style="margin-top: 10px; font-weight: bold; color: #149ddd;">🌟 Featured Project: D-iDconnect</p>
+          <p style="font-size: 9pt; margin-top: 5px;">Complete ecosystem including mobile app (Flutter), admin panel (ASP.NET MVC), .NET Core APIs, blockchain integration, and AI-powered features. <a href="portfolio-details-didconnect.html" target="_blank">View Portfolio Details</a> | <a href="https://play.google.com/store/apps/details?id=corop.di.connect&hl=en" target="_blank">Google Play</a> | <a href="https://apps.apple.com/za/app/d-idconnect/id6746030666" target="_blank">Apple App Store</a></p>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Team Lead</span>
+            <span class="company">United Soft Labs | Lahore, Pakistan</span>
+          </div>
+          <span class="dates">November 2020 - October 2023</span>
+        </div>
+        <div class="job-description">
+          <ul>
+            <li>Led 8+ developer team delivering enterprise mobile and backend solutions, established coding standards, CI/CD pipelines, and mentoring programs achieving 95% project success rate</li>
+            <li>Developed RESTful APIs using ASP.NET MVC and .NET Core for seamless mobile-backend integration with complex SQL Server databases, stored procedures, and optimized queries</li>
+            <li>Reduced bug reports by 60% through comprehensive code review standards and improved test coverage from 40% to 85% with automated testing frameworks</li>
+            <li>Mentored 5 junior developers with 3 promoted to mid-level positions through technical guidance and professional development programs</li>
+            <li>Managed complete SDLC from requirements gathering to deployment, ensuring on-time delivery and high-quality code standards</li>
+            <li>Key Projects: aCart Online Shopping & Seller apps, Med Soft (Pharmacy POS), Dr MAN Pharmacy management system</li>
+          </ul>
+          <p style="margin-top: 5px; font-size: 9pt;"><strong>Key Projects:</strong> <a href="portfolio-details-acart-onlineshopping.html" target="_blank">aCart Customer</a> | <a href="portfolio-details-acart-seller.html" target="_blank">aCart Seller</a> | <a href="portfolio-details-med-soft.html" target="_blank">Med Soft</a></p>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Senior Android Developer</span>
+            <span class="company">Convergence Business Systems | Islamabad, Pakistan</span>
+          </div>
+          <span class="dates">June 2019 - October 2020</span>
+        </div>
+        <div class="job-description">
+          <ul>
+            <li>Developed high-performance native Android and Flutter applications with .NET backend integration, transitioning legacy applications to Flutter reducing codebase by 40%</li>
+            <li>Optimized performance reducing memory usage by 30% and improved user engagement by 35% through custom animations and enhanced UI/UX</li>
+            <li>Integrated RESTful APIs for real-time data synchronization, conducted unit and widget testing ensuring robust application functionality</li>
+            <li>Designed and implemented robust architectures for Android apps focusing on scalability and maintainability using Java and Kotlin</li>
+            <li>Researched and implemented new Flutter libraries and technologies to improve development efficiency</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Android & .NET Developer</span>
+            <span class="company">Exceleron Communications | Lahore, Pakistan</span>
+          </div>
+          <span class="dates">December 2016 - June 2019</span>
+        </div>
+        <div class="job-description">
+          <ul>
+            <li>Delivered full-stack mobile and web solutions for enterprise clients including PTCL and Jazz Telecom</li>
+            <li>Developed web applications using ASP.NET MVC, C#, and JavaScript with database schemas and RESTful APIs</li>
+            <li>PTCL Smart Link Chat: Real-time messaging with XMPP integration serving 10K+ users</li>
+            <li>Jazz Preventive Maintenance: Field worker app with GPS tracking and offline sync capabilities</li>
+            <li>Designed and implemented database schemas, stored procedures, and optimized queries for high-performance applications</li>
+            <li>Collaborated with cross-functional teams to gather and analyze requirements, translating them into technical specifications and solutions</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Android & .NET Developer</span>
+            <span class="company">Radius Interactive | Pakistan</span>
+          </div>
+          <span class="dates">November 2015 - November 2016</span>
+        </div>
+        <div class="job-description">
+          <ul>
+            <li>Developed web and mobile applications using ASP.NET, C#, and Android (Java)</li>
+            <li>Integrated mobile applications with RESTful APIs for seamless data exchange</li>
+            <li>Resolved complex software issues ensuring optimal performance and implemented version control workflows</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Technical Implementations -->
+    <div class="section">
+      <div class="section-title">Key Technical Implementations</div>
+      <ul style="margin-left: 20px; font-size: 10pt;">
+        <li><strong>Face Recognition:</strong> InsightFace (SCRFD-10GF detection, ResNet50 recognition) with liveness detection and anti-spoofing - <a href="https://github.com/deepinsight/insightface/tree/master" target="_blank">GitHub Repository</a></li>
+        <li><strong>BioPass Fingerprint Biometric:</strong> BioPass ID Fingerprint SDK (Flutter) integrated with .NET Core backend models - <a href="https://www.biopassid.com/sdk/fingerprintsdk" target="_blank">BioPass ID SDK</a></li>
+        <li><strong>OCR Document Verification:</strong> Qwen2-7B-Instruct model for ID scanning and fraud detection - <a href="https://github.com/yangjianxin1/Qwen2" target="_blank">GitHub Repository</a></li>
+        <li><strong>Admin Panel System:</strong> Full-featured admin dashboard with user management, analytics, RBAC, audit logs, and reporting</li>
+        <li><strong>Blockchain Integration:</strong> Node-based blockchain implementation for secure transactions and cryptocurrency wallet management</li>
+        <li><strong>Real-Time XMPP Chat:</strong> xmpp_plugin 2.2.13 with Ejabberd backend featuring end-to-end encryption and offline message queuing</li>
+        <li><strong>.NET Core Microservices:</strong> Scalable backend architecture with SQL Server RDBMS handling 100K+ daily transactions</li>
+        <li><strong>Real-Time Systems:</strong> WebSocket, SignalR, and XMPP for instant messaging and live admin updates</li>
+        <li><strong>AI-Assisted Testing:</strong> Automated test generation and quality assurance using AI tools achieving 90% code coverage</li>
+      </ul>
+    </div>
+
+    <!-- Key Projects -->
+    <div class="section">
+      <div class="section-title">Key Projects</div>
+      
+      <div class="project-item">
+        <div class="project-title">🌟 D-iDconnect — AI-Powered Decentralized Identity Platform</div>
+        <div style="font-size: 10pt; margin-top: 3px; margin-bottom: 5px;">
+          Revolutionary AI-powered security application with multi-factor biometric authentication (face, fingerprint, voice), blockchain wallets, real-time XMPP chat, complete admin panel, and consent-based identity management. Available on Google Play and Apple App Store.
+        </div>
+        <div class="project-links">
+          <a href="portfolio-details-didconnect.html" target="_blank">📋 Portfolio Details</a>
+          <a href="https://play.google.com/store/apps/details?id=corop.di.connect&hl=en" target="_blank">📱 Google Play Store</a>
+          <a href="https://apps.apple.com/za/app/d-idconnect/id6746030666" target="_blank">🍎 Apple App Store</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">aCart Online Shopping & Seller — E-commerce Marketplace</div>
+        <div style="font-size: 10pt; margin-top: 3px; margin-bottom: 5px;">
+          Complete marketplace ecosystem with customer app, seller app, and admin panel. Features include product management, order processing, payment integration, delivery tracking, and analytics dashboard.
+        </div>
+        <div class="project-links">
+          <a href="portfolio-details-acart-onlineshopping.html" target="_blank">🛒 Customer App Details</a>
+          <a href="portfolio-details-acart-seller.html" target="_blank">👨‍💼 Seller App Details</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Eezly — Food Delivery Application (Canada)</div>
+        <div style="font-size: 10pt; margin-top: 3px; margin-bottom: 5px;">
+          Cross-platform food delivery app with real-time order tracking, payment integration, and restaurant management system.
+        </div>
+        <div class="project-links">
+          <a href="portfolio-details-eezly-food-app.html" target="_blank">📋 Portfolio Details</a>
+          <a href="https://play.google.com/store/apps/details?id=com.technology.eezly&hl=en&gl=US" target="_blank">📱 Google Play</a>
+          <a href="https://apps.apple.com/ca/app/eezly/id1542435202" target="_blank">🍎 App Store</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Med Soft — Healthcare Management System</div>
+        <div style="font-size: 10pt; margin-top: 3px; margin-bottom: 5px;">
+          Comprehensive pharmacy POS system with inventory management, prescription processing, patient records, sales, purchases, and reporting. Features ChatGPT integration and multi-platform support.
+        </div>
+        <div class="project-links">
+          <a href="portfolio-details-med-soft.html" target="_blank">📋 Portfolio Details</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Other Enterprise Projects</div>
+        <div style="font-size: 10pt; margin-top: 3px;">
+          Dr MAN Pharmacy, Preventive Maintenance App (Jazz Telecom), PTCL Smart Link Chat, Kids Tracker, MyWarid App, and more. <a href="index.html#portfolio" target="_blank">View Full Portfolio</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI-Powered Development Expertise -->
+    <div class="section">
+      <div class="section-title">AI-Powered Development Expertise</div>
+      <ul style="margin-left: 20px; font-size: 10pt;">
+        <li><strong>Cursor AI Integration:</strong> Leveraging Cursor AI for intelligent code completion, refactoring, and bug detection across Flutter and .NET projects, reducing development time by 40%</li>
+        <li><strong>GitHub Copilot:</strong> Utilizing AI-powered code reviews and suggestions maintaining 95% code quality standards with automated test generation achieving 90% coverage</li>
+        <li><strong>Vibe Coding & Prompt Engineering:</strong> Mastered vibe coding techniques for rapid prototyping, expert in crafting precise prompts for code generation, architecture design, and problem-solving</li>
+        <li><strong>AI-Assisted Development Practices:</strong> Implementing AI-assisted test generation, documentation generation, code explanations, technical debt analysis, and performance optimization suggestions</li>
+        <li><strong>Team Training:</strong> Created comprehensive prompt engineering guidelines and training programs for team members on effective AI tool utilization</li>
+      </ul>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+      <div class="section-title">Education</div>
+      <div class="education-item">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Bachelor of Computer Science</span>
+          </div>
+          <span class="dates">2010 - 2014</span>
+        </div>
+        <div style="font-style: italic; color: #666; font-size: 10pt; margin-top: 3px;">Virtual University of Pakistan</div>
+        <div style="font-size: 10pt; margin-top: 5px;">Focused on software development fundamentals, algorithms, data structures, database systems, and distributed computing.</div>
+      </div>
+    </div>
+
+    <!-- Additional Information -->
+    <div class="section">
+      <div class="section-title">Additional Information</div>
+      <ul style="margin-left: 20px; font-size: 10pt;">
+        <li>Portfolio Website: <a href="https://info-abubakar-hussain.github.io/abubakarhussain/" target="_blank">info-abubakar-hussain.github.io/abubakarhussain</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/abubakar-hussain-66b834130/" target="_blank">linkedin.com/in/abubakar-hussain-66b834130</a></li>
+        <li>Freelance: Available for consulting and project work</li>
+        <li>Languages: English (Fluent), Urdu (Native)</li>
+        <li>10+ years professional software development experience</li>
+        <li>5+ years Flutter cross-platform development</li>
+        <li>4+ years Android native development</li>
+      </ul>
+    </div>
+
+  </div>
+</body>
+</html>
+
